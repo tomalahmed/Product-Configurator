@@ -1,10 +1,19 @@
 :root {
-    --bg-color: #f0f2f5;
+    --bg-color: #f5f5f5;
     --card-bg: #ffffff;
-    --primary-color: #4a90e2;
-    --secondary-color: #50e3c2;
-    --text-color: #333333;
+    --primary-color: #2563eb;
+    --secondary-color: #10b981;
+    --text-color: #1f2937;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
+
+.main-container {
+    perspective: 1000px;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -14,10 +23,16 @@ body {
     background-color: var(--bg-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background-color 0.5s ease;
+
 }
 
-.main-container {
-    perspective: 1000px;
+
+.controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
 }
 
 
@@ -31,8 +46,13 @@ body {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+
 .product-card:hover {
     transform: translateY(-5px) rotateX(2deg);
     box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
 
+.product_details {
+    padding: 20px;
+    text-align: center;
+}
