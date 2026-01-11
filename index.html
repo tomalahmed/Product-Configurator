@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <title>CSS Prac</title>
 </head>
 <body>
+    <!-- Buttons (Hidden) -->
+    <input type="radio" name="color" id="clr-red" checked>
+    <input type="radio" name="color" id="clr-blue">
+    <input type="radio" name="color" id="clr-black">
+    <input type="radio" name="color" id="clr-yellow">
+
+
       <div class="main-container">
-        
+        <!-- product -->
         <article class="product-card">
             
             <div class="product-visuals">
-                <img src="Sneaker.png" alt="Sneaker" class="product-image base">
+                <img src="./Sneaker.png" alt="Sneaker" class="product-image base">
     
                 <div class="product-image tint-layer"></div>
+                <!-- blob background -->
                 <div class="bg-shape"></div>
             </div>
 
+            <!-- product details -->
             <div class="product-details">
                 <span class="brand">N0-JS Freak!</span>
                 <h1 class="title">v1.0!</h1>
@@ -32,7 +41,7 @@
                         <label for="clr-yellow" class="swatch yellow"></label>
                     </div>
                 </div>
-
+                <!-- product price -->
                 <div class="price-box">
                     <span class="price">$299.00</span>
                     <button class="buy-btn">Add to Cart</button>
