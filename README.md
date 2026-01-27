@@ -3,7 +3,7 @@
 A highly interactive product configurator built entirely with HTML and CSS Only. No JavaScript.
 This project demonstrates how to handle state management, theming, and interactivity using advanced CSS techniques like the "Checkbox Hack" (using hidden radio buttons and sibling combinators).
 
-!Project Preview:- https://tomalahmed.github.io/My_new_project-CSS/
+Project Preview! - https://tomalahmed.github.io/Product-Configurator
 
 ## 🚀 Features
 
