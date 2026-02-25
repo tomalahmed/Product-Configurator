@@ -1,56 +1,119 @@
-# Pure CSS Product Configurator
+# 📦 Pure CSS Product Configurator
 
-A highly interactive product configurator built entirely with HTML and CSS Only. No JavaScript.
-This project demonstrates how to handle state management, theming, and interactivity using advanced CSS techniques like the "Checkbox Hack" (using hidden radio buttons and sibling combinators).
+A fully interactive product configurator built entirely with **HTML & CSS — no JavaScript**.
+This project demonstrates how to handle UI state, theming, and interactivity using pure CSS techniques such as hidden radio inputs (Checkbox Hack), CSS variables, and sibling combinators.
 
-Project Preview! - https://tomalahmed.github.io/Product-Configurator
+---
 
 ## 🚀 Features
 
--   **Zero JavaScript**: All logic is handled via CSS.
--   **State Management**: Uses hidden `<input type="radio">` elements to track selected colors.
--   **Dynamic Theming**: CSS Variables (`--theme-color`, `--bg-color`) update instantly based on selection.
--   **Smooth Animations**: Transitions for colors, shadows, and transform effects.
--   **Responsive Design**: Clean and modern card layout.
+* **Zero JavaScript** — all logic powered by CSS
+* **State Management** via hidden `<input type="radio">`
+* **Dynamic Theming** using CSS custom properties
+* **Responsive Design** with smooth transitions
+* Clean, modern product card UI
+
+---
 
 ## 🛠️ How It Works
 
-The core logic relies on the **General Sibling Combinator (`~`)** and **CSS Variables**.
+### State Management
 
-1.  **HTML Structure**: Radio buttons are placed at the very top of the DOM, before the main content.
-    ```html
-    <input type="radio" name="color" id="clr-red" checked>
-    <input type="radio" name="color" id="clr-blue">
-    <!-- ... -->
-    <div class="main-container">...</div>
-    ```
+Hidden radio inputs are used to track the selected theme.
 
-2.  **CSS Logic**: When a specific radio is checked, we override CSS variables for the content that follows it.
-    ```css
-    #clr-blue:checked ~ .main-container {
-        --theme-color: #0984e3;
-        --theme-shadow: rgba(9, 132, 227, 0.4);
-    }
-    ```
+```html
+<input type="radio" name="color" id="clr-red" checked>
+<input type="radio" name="color" id="clr-blue">
+<!-- add more colors here -->
+```
 
-3.  **Interactivity**: The color swatches inside the card are actually `<label>` elements linked to the hidden radio buttons. Clicking a label checks the corresponding radio button, triggering the CSS state change.
+By placing these inputs at the top of the DOM, later CSS selectors can react when a specific radio is checked.
 
-## 📦 Usage
+### Theming Logic
 
-1.  Clone the repository or download the files.
-2.  Open `index.html` in any modern web browser.
-3.  Click the color swatches to see the theme change instantly.
+When a color input is checked, custom CSS properties are updated:
 
-## 🎨 Customization
+```css
+#clr-blue:checked ~ .main-container {
+    --theme-color: #0984e3;
+    --theme-shadow: rgba(9, 132, 227, 0.4);
+}
+```
 
-To add a new color:
+This changes the theme of the app instantly, including highlights, shadows, and primary UI colors.
 
-1.  **HTML**: Add a new `<input>` at the top and a `<label>` in the `.color-picker` section.
-2.  **CSS**: Add a new rule block in `styles.css`:
-    ```css
-    #clr-newcolor:checked ~ .main-container {
-        --theme-color: #your-color-code;
-        /* ... other variables */
-    }
-    ```
-#Done with Love.
+---
+
+## 🎨 Interactivity
+
+The visible color swatches are `<label>` elements linked to the hidden radios. Clicking a swatch checks the corresponding radio input, which triggers the CSS state change.
+
+```html
+<label for="clr-red" class="color-swatch red"></label>
+```
+
+---
+
+## 📦 Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/tomalahmed/Product-Configurator.git
+   ```
+2. **Open** `index.html` in a browser
+3. **Click a color swatch** to update the theme instantly
+
+---
+
+## 🧩 Adding New Colors
+
+To add a new color theme:
+
+### 1. HTML
+
+Add a new radio input:
+
+```html
+<input type="radio" name="color" id="clr-green">
+```
+
+Add a color swatch label:
+
+```html
+<label for="clr-green" class="color-swatch green"></label>
+```
+
+### 2. CSS
+
+Define theme variables for the new color:
+
+```css
+#clr-green:checked ~ .main-container {
+    --theme-color: #00b894;
+    --theme-shadow: rgba(0, 184, 148, 0.4);
+}
+```
+
+That’s it! Your new theme will work automatically.
+
+---
+
+## 🧠 What You’ll Learn
+
+* Creative CSS state management without JavaScript
+* Using radio inputs and sibling selectors for interactivity
+* Modifying CSS variables dynamically
+* Building responsive UI components with modern CSS
+
+---
+
+## 💡 Why It Matters
+
+This project proves you can build **complex UI interactions and stateful behavior using only CSS** — no frameworks or scripting required. It’s lightweight, hack-free, and works in all modern browsers.
+
+---
+
+## 📌 License
+
+MIT © tomalahmed
